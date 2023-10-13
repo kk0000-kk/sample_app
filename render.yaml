@@ -1,0 +1,20 @@
+databases:
+  - name: sample_app_production_7e3p
+    databaseName: sample_app_production_7e3p
+    user: sample_app
+    region: singapore
+
+services:
+  - type: web
+    name: sample_app_production_7e3p
+    env: ruby
+    region: singapore
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: <%= ENV['DATABASE_URL'] %>
+        fromDatabase:
+          name: render_app
+          property: connectionString
+      - key: <%= ENV['RAILS_MASTER_KEY'] %>
+        sync: false
