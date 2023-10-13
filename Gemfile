@@ -8,11 +8,11 @@ ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'pg'
 gem 'puma'
 gem 'rails', '7.0.4.3'
 gem 'sassc-rails'
 gem 'sprockets-rails'
-gem 'sqlite3'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
