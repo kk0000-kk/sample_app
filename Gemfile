@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
+# git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
@@ -22,6 +22,7 @@ end
 
 group :development do
   gem 'rubocop'
+  gem 'sgcop', github: 'SonicGarden/sgcop'
   gem 'solargraph'
   gem 'web-console'
 end
