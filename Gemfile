@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 gem 'bootsnap', require: false
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'
