@@ -1,8 +1,14 @@
-<nav class='navbar fixed-top navbar-expand-lg bg-dark'>
+<nav class='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
   <div class='container-fluid'>
     <%= link_to 'sample app', root_path, id: 'logo' %>
     <div>
-      <ul class='navbar-nav'>
+      <div class='navbar-header'>
+        <button id='hamburger' type='button' class='navbar-toggler collapsed' data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+          <span class='navbar-toggler-icon'></span>
+        </button>
+      </div>
+      <ul id='navbar-menu'
+          class='navbar-nav navbar-right collapse navbar-collapse'>
         <li class='nav-item mx-2'><%= link_to 'Home', root_path %></li>
         <li class='nav-item mx-2'><%= link_to 'Help', help_path %></li>
         <% if user_signed_in? %>
