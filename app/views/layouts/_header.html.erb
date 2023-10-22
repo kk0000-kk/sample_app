@@ -12,7 +12,7 @@
         <li class='nav-item mx-2'><%= link_to 'Home', root_path %></li>
         <li class='nav-item mx-2'><%= link_to 'Help', help_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to 'Users', '#' %> </li>
+          <li><%= link_to 'Users', users_path %> </li>
           <li class='dropdown mx-2'>
             <a href='#' id='account' class='dropdown-toggle'>
               Account <b class='caret'></b>
