@@ -19,7 +19,7 @@
             </a>
             <ul id='dropdown-menu' class='dropdown-menu'>
               <li class='dropdown-item'><%= link_to 'Profile', current_user %></li>
-              <li class='dropdown-item'><%= link_to 'Setting', '#' %></li>
+              <li class='dropdown-item'><%= link_to 'Setting', edit_user_registration_path %></li>
               <li class='dropdown-divider'></li>
               <li class='dropdown-item'><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             </ul>
