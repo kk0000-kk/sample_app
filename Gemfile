@@ -8,6 +8,7 @@ ruby '3.2.2'
 gem 'bootsnap', require: false
 gem 'bootstrap'
 gem 'devise'
+gem 'faker'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'
