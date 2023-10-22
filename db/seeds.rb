@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 # メインのサンプルユーザーを1人作成する
-User.create!(name: 'Example User',
-             email: 'example@example.com',
-             password: 'foobar',
-             password_confirmation: 'foobar')
+User.create!(name: 'Admin User',
+             email: 'admin@example.com',
+             password: 'adminpassword',
+             password_confirmation: 'adminpassword',
+             admin: true)
 
 # 追加のユーザーをまとめて生成する
 99.times do |n|
