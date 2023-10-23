@@ -1,21 +1,24 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[index destroy]
   before_action :admin_user, only: :destroy
+  before_action :set_user, only: %i[show destroy]
 
   def index
-    @users = User.page(params[:page]).per(30)
+    @users = User.page(params[:page])
   end
 
   def show
-    @user = User.find(params[:id])
+  end
+
+  def destroy
+    @user.destroy!
+    redirect_to users_url, status: :see_other, notice: 'User deleted'
   end
 
   private
 
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = 'User deleted'
-    redirect_to users_url, status: :see_other
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def admin_user
