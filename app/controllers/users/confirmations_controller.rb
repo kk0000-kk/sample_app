@@ -11,7 +11,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     confirmation_token = params[:user][:confirmation_token]
     @user = User.find_by!(confirmation_token:)
 
-    if resource.update(confirmation_params)
+    if @user.update(confirmation_params)
       @user = User.confirm_by_token(confirmation_token)
       set_flash_message :notice, :confirmed
       sign_in_and_redirect :user, @user
