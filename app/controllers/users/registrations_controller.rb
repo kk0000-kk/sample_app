@@ -3,6 +3,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  # skip_before_action :require_no_authentication
+  # skip_before_action UsersController.authenticate_user!
 
   # GET /resource/sign_up
   # def new
@@ -16,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   # def edit
-  #   super
+  #   super unless current_user.confirmed_at
   # end
 
   # PUT /resource
