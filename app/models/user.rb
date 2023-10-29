@@ -13,10 +13,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  # 試作feedの定義
-  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  # ユーザーのステータスフィードを返す
   def feed
-    Micropost.where(user_id: id)
+    Micropost.where('user_id IN (?) OR user_id = ?', following_ids, id)
   end
 
   # ユーザーをフォローする
